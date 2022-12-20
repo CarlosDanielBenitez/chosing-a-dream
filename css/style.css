@@ -1,0 +1,224 @@
+/* Colores
+ background-color: rgb(0, 172, 234);
+
+
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+.hero{
+    grid-area: hero;
+}
+.hero nav ul {
+    flex-direction: column;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+
+}
+
+
+
+.hero nav ul li a {
+    font-size: 19px;
+    text-decoration: none;
+     transition: 2s;
+    color: black;
+    transition-duration: 1s;
+}
+
+.hero nav ul li:hover {
+    transform: scale(1.2);
+}
+
+.hero__nos img {
+    height: 259px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: plan 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: 5ms;
+
+}
+
+.principal{
+        grid-area: principal;
+}
+.main__mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.main__mobile div h1 {
+    font-size: 20px;
+    animation: opaco 5s;
+    animation-iteration-count: infinite;
+    transition-timing-function: step-end;
+}
+
+@keyframes opaco {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .5;
+        transform: translateX(2px);
+
+    }
+
+    50% {
+        transform: translateX(-2px);
+        opacity: 1;
+    }
+
+    75% {
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.65);
+
+
+    }
+
+    100% {
+        transform: translateX(-2px);
+
+        color: rgb(0, 0, 0);
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.65);
+
+    }
+
+}
+
+.conceptsBasic{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: solid rgba(7, 156, 231, 0.105) 2px;
+    background-image: linear-gradient(rgba(0, 149, 255, 0.857), rgb(0, 238, 255));
+}
+.conceptsBasic h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.378);
+}
+#cSpecial{
+    color: rgb(240, 248, 255);
+    text-shadow: 3px 2px 1px rgb(0, 255, 221);
+}
+.secundario{
+    display: none;
+    font-size: 62px;
+}
+.end__mobile{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(rgba(0, 238, 255, 0.998) , rgb(0, 166, 255));
+    text-shadow: 1px 4px 5px rgb(96, 86, 86);
+    grid-area: pie;
+}
+.end__mobile p a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero nav ul{
+        display: flex;
+        flex-direction: row;
+      justify-content: space-around;
+    background-image: linear-gradient(rgba(0, 174, 255, 0.718), rgb(0, 225, 255));
+
+
+    }
+    @keyframes plan {
+        0% {
+        opacity: 0;
+
+        }
+
+        25% {
+            opacity: 1;
+
+        }
+
+        50% {
+            opacity: 1;
+
+        }
+
+        100% {
+        opacity: 0;
+            
+
+        }
+    }
+
+    @keyframes opaco {
+        0% {
+            transform: scale(0);
+
+        }
+        
+        25% {
+            transform: scale(.9);
+
+        }
+
+        50% {
+            transform: scale(.9);
+
+        }
+
+        100% {
+            width: 100%;
+            transform: scale(1);
+         
+            text-shadow: 2px 3px 3px black;
+
+        }
+    }
+    .hero nav ul li a, .main__mobile div h1,.conceptsBasic h2,.end__mobile p,.end__mobile p a  {
+        font-size: 25px;
+        }
+}
+
+@media screen and (min-width: 1024px){
+    .gridLayout{
+        display: grid;
+        grid-template-areas: 
+        "hero hero hero hero"
+        "principal principal principal principal"
+        "secundario secundario secundario secundario"
+        "pie pie pie pie"
+        ;
+    }
+    .hero nav ul li a{
+        font-size: 25px;
+    }
+    .secundario{
+        display: block;
+    }
+    .end__mobile{
+        width: 100vw;
+    }
+
+ .main__mobile div h1,.conceptsBasic h2,.end__mobile p,.end__mobile p a  {
+font-size: 2.4rem;
+}
+
+    
+}
